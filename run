@@ -1,0 +1,21 @@
+#!/usr/bin/php
+<?php
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Clio\Daemon;
+if (Daemon::isRunning(PID_FILE)) {
+    echo "Daemon is already running.\n";
+
+} else {
+
+    Daemon::work(
+        array('pid' => PID_FILE),
+        function($stdin, $stdout, $stderr) {
+            $runner = new \CDavison\Jobs\Runners\NumberRunner();
+            $runner->run();
+        }
+    );
+
+    echo "Daemon is now running.\n";
+}
