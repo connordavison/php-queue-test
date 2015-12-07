@@ -3,17 +3,29 @@ namespace CDavison\Jobs\Queues;
 
 class Number extends \PHPQueue\JobQueue
 {
+    /**
+     * Initialise the jobs list.
+     */
     public function __construct()
     {
-        $this->jobs = range(1,10);
+        $this->jobs = [];
     }
 
-    public function addJob($newJob = null)
+    /**
+     * Add a job
+     * @param int $newJob Some int to work on
+     */
+    public function addJob($job)
     {
-        array_unshift($this->jobs, $newJob);
+        array_unshift($this->jobs, $job);
         return true;
     }
 
+    /**
+     * Get a job from this queue
+     * @param string $id [description]
+     * @return [type] [description]
+     */
     public function getJob($id = null)
     {
         if (!$this->getQueueSize()) {

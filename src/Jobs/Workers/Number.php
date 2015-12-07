@@ -3,12 +3,17 @@ namespace CDavison\Jobs\Workers;
 
 class Number extends \PHPQueue\Worker
 {
-    public function runJob(\PHPQueue\Job $queued_job)
+    /**
+     * Execute the job
+     * @param \PHPQueue\Job $queued_job
+     * @return void
+     */
+    public function runJob($queued_job)
     {
         $number = $queued_job->data;
 
         sleep(10);
-        echo $number;
+        echo "$number\n";
 
         $this->result_data = array('status' => 'success');
     }
