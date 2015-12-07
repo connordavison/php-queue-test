@@ -1,0 +1,243 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "7813ecb048948ba0044daff4c4ce5cd7",
+    "content-hash": "dba0c7819949a83c3d82e9dbac85d7eb",
+    "packages": [
+        {
+            "name": "clio/clio",
+            "version": "0.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nramenta/clio.git",
+                "reference": "6a9f600b73fa213e817d5c1e67a4641aecd156ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nramenta/clio/zipball/6a9f600b73fa213e817d5c1e67a4641aecd156ef",
+                "reference": "6a9f600b73fa213e817d5c1e67a4641aecd156ef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Clio": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nofriandi Ramenta",
+                    "email": "nramenta@gmail.com"
+                }
+            ],
+            "description": "Lightweight utility and helper classes for CLI applications",
+            "keywords": [
+                "cli",
+                "console",
+                "daemon"
+            ],
+            "time": "2014-06-22 14:49:41"
+        },
+        {
+            "name": "coderkungfu/php-queue",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CoderKungfu/php-queue.git",
+                "reference": "c567952fee3260df39fd23df49e50eeef96592b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CoderKungfu/php-queue/zipball/c567952fee3260df39fd23df49e50eeef96592b3",
+                "reference": "c567952fee3260df39fd23df49e50eeef96592b3",
+                "shasum": ""
+            },
+            "require": {
+                "clio/clio": "@stable",
+                "monolog/monolog": "~1.3",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "amazonwebservices/aws-sdk-for-php": "dev-master",
+                "aws/aws-sdk-php": "dev-master",
+                "ext-memcache": "*",
+                "iron-io/iron_mq": "dev-master",
+                "microsoft/windowsazure": "dev-master",
+                "mrpoundsign/pheanstalk-5.3": "dev-master",
+                "predis/predis": "v0.8.0"
+            },
+            "suggest": {
+                "Respect/Rest": "For a REST server to post job data",
+                "amazonwebservices/aws-sdk-for-php": "For AWS SQS backend support (legacy version)",
+                "aws/aws-sdk-php": "For AWS SQS backend support",
+                "clio/clio": "Support for daemonizing PHP CLI runner",
+                "iron-io/iron_mq": "For IronMQ backend support",
+                "microsoft/windowsazure": "For Windows Azure Service Bus backend support",
+                "mrpoundsign/pheanstalk-5.3": "For Beanstalkd backend support",
+                "pecl-mongodb": "For MongoDB backend support",
+                "predis/predis": "For Redis backend support"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PHPQueue": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Cheng",
+                    "email": "mcheng.work@gmail.com"
+                }
+            ],
+            "description": "A unified front-end for different queuing backends. Includes a REST server, CLI interface and daemon runners.",
+            "homepage": "http://github.com/CoderKungfu/php-queue",
+            "keywords": [
+                "queue",
+                "transaction"
+            ],
+            "time": "2013-12-29 07:42:11"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.17.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "raven/raven": "^0.13",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "swiftmailer/swiftmailer": "~5.3",
+                "videlalvaro/php-amqplib": "~2.4"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "raven/raven": "Allow sending log messages to a Sentry server",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.16.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2015-10-14 12:51:02"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
