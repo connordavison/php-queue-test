@@ -16,15 +16,26 @@ if (Daemon::isRunning(PID_FILE)) {
         'stderr' => STDERR_FILE
     );
 
+    setup();
+
     Daemon::work($descriptors, "main");
 
     echo "Daemon is now running.\n";
 }
 
-function main() {
+function setup() {
     PHPQueue\Base::$queue_namespace = QUEUE_NAMESPACE;
     PHPQueue\Base::$worker_namespace = WORKER_NAMESPACE;
 
+    $number_queue = \PHPQueue\Base::getQueue('Number');
+
+    // Populate the queue with some data
+    for ($i = 0; $i < rand(0, 10); $i++) {
+        $number_queue->addJob(rand(0, 100));
+    } 
+}
+
+function main() {
     $runner = new \CDavison\Jobs\Runners\Number();
     $runner->run();
 }
