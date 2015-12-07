@@ -12,8 +12,8 @@ class Number extends \PHPQueue\Worker
     {
         $number = $queued_job->data;
 
-        sleep(10);
         echo "$number\n";
+        sleep(10);
 
         $this->result_data = array('status' => 'success');
     }
