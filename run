@@ -4,18 +4,27 @@ require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Clio\Daemon;
+
 if (Daemon::isRunning(PID_FILE)) {
     echo "Daemon is already running.\n";
 
 } else {
 
-    Daemon::work(
-        array('pid' => PID_FILE),
-        function($stdin, $stdout, $stderr) {
-            $runner = new \CDavison\Jobs\Runners\NumberRunner();
-            $runner->run();
-        }
+    $descriptors = array(
+        'pid'    => PID_FILE,
+        'stdout' => STDOUT_FILE,
+        'stderr' => STDERR_FILE
     );
 
+    Daemon::work($descriptors, "main");
+
     echo "Daemon is now running.\n";
+}
+
+function main() {
+    PHPQueue\Base::$queue_namespace = QUEUE_NAMESPACE;
+    PHPQueue\Base::$worker_namespace = WORKER_NAMESPACE;
+
+    $runner = new \CDavison\Jobs\Runners\Number();
+    $runner->run();
 }
