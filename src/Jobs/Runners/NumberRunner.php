@@ -1,5 +1,5 @@
 <?php
-namespace CDavison\Job\Runners;
+namespace CDavison\Jobs\Runners;
 
 class NumberRunner extends \PHPQueue\Runner
 {

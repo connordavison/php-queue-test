@@ -1,5 +1,5 @@
 <?php
-namespace CDavison\Job\Queues;
+namespace CDavison\Jobs\Queues;
 
 class NumberQueue extends \PHPQueue\JobQueue
 {
