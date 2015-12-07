@@ -39,6 +39,10 @@ class Number extends \PHPQueue\JobQueue
         return $next_job;
     }
 
+    /**
+     * Return the amount of jobs left in this queue
+     * @return int
+     */
     public function getQueueSize()
     {
         return count($this->jobs);
