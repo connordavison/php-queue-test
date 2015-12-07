@@ -13,7 +13,7 @@ class Number extends \PHPQueue\JobQueue
 
     /**
      * Add a job
-     * @param int $newJob Some int to work on
+     * @param int $job Some int to work on
      */
     public function addJob($job)
     {
@@ -23,8 +23,8 @@ class Number extends \PHPQueue\JobQueue
 
     /**
      * Get a job from this queue
-     * @param string $id [description]
-     * @return [type] [description]
+     * @param string [$id=null] Not used here
+     * @return \PHPQueue\Job The next job from the stack
      */
     public function getJob($id = null)
     {
